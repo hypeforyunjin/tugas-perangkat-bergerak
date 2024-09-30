@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:tugas_flutter/basic_widgets/dialog_widget.dart';
+import 'package:tugas_flutter/basic_widgets/fab_widget.dart';
+import 'package:tugas_flutter/basic_widgets/input_widget.dart';
+import 'package:tugas_flutter/basic_widgets/scaffold_widget.dart';
+import 'basic_widgets/text_widget.dart';
+import 'basic_widgets/image_widget.dart';
+import 'basic_widgets/loading_cupertino.dart';
+import 'basic_widgets/scaffold_widget.dart';
+import 'basic_widgets/dialog_widget.dart';
+import 'basic_widgets/date_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +66,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -64,9 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      // _counter++;
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -105,21 +118,32 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            const MyLoading(),
+            const MyTextWidget(),
+            const MyImageWidget(),
+            const MyFab(),
+            const MyScaffoldWidget(title: 'serenaa'),
+            const MyDialog(),
+            const MyInput(),
+            const MyDate(),
+            
+            // const Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headlineMedium,
+            // ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+  
 }
+
